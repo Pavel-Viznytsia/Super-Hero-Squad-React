@@ -5,7 +5,7 @@ import Container from './components/shared/Container';
 import CreateHeroForm from './components/CreateHero';
 import Heroes from './components/Heroes';
 import SquadEditor from './components/SquadEditor';
-import SaveSquads from './components/SaveSquads';
+import SavedSquads from './components/SavedSquads';
 import './App.css';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
           <CreateHeroForm />
           <Heroes />
           <SquadEditor />
-          <SaveSquads />
+          <SavedSquads />
         </Container>
       </div>
     );
