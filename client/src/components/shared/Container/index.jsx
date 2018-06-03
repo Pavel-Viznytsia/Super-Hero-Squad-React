@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
@@ -10,5 +8,9 @@ const Container = ({ children }) => (
     <article className="main__container">{children}</article>
   </main>
 );
+
+Container.propTypes = {
+  children: PropTypes.string.isRequired,
+};
 
 export default Container;

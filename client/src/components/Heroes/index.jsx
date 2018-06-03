@@ -2,7 +2,8 @@ import React from 'react';
 import HeroCard from '../HeroCard';
 import Input from '../shared/Input';
 import Panel from '../shared/Panel/index';
-// import '../../../../server/db.json';
+import ButtonBlock from '../shared/ButtonBlock';
+import Button from '../shared/Button';
 
 const heroesList = {
   heroes: [
@@ -103,7 +104,13 @@ const Heroes = () => (
     <Input className="addHero" placeholder="Search by name" />
     <ul>
       {heroesList.heroes.map(item => (
-        <HeroCard name={item.name} key={String(item.id)} />
+        <HeroCard name={item.name} key={String(item.id)}>
+          <ButtonBlock>
+            <Button text="Add" className="addBtn" />
+            <Button text="Del" className="delBtn" />
+            <Button text="Info" className="infBtn" />
+          </ButtonBlock>
+        </HeroCard>
       ))}
     </ul>
   </Panel>

@@ -1,8 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import Container from './components/shared/Container';
-// import Panel from './components/shared/Panel';
-import CreateHeroForm from './components/CreateHero';
+import CreateHero from './components/CreateHero';
 import Heroes from './components/Heroes';
 import SquadEditor from './components/SquadEditor';
 import SavedSquads from './components/SavedSquads';
@@ -13,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Container>
-          <CreateHeroForm />
+          <CreateHero />
           <Heroes />
           <SquadEditor />
           <SavedSquads />

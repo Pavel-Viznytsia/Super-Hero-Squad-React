@@ -3,3 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.main__title {
+  margin: 16px 0;
+}

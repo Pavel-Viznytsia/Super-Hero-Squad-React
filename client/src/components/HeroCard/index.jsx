@@ -1,26 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ButtonBlock from '../shared/ButtonBlock';
-import Button from '../shared/Button';
 import './style.css';
 
-const HeroCard = ({ name }) => (
+const HeroCard = ({ name, children }) => (
   <li className="heroCard">
     <p className="heroName">{name}</p>
-    <ButtonBlock>
-      <Button text="Add" className="addBtn" />
-      <Button text="Del" className="delBtn" />
-      <Button text="Info" className="infBtn" />
-    </ButtonBlock>
+    {children}
   </li>
 );
 
 HeroCard.propTypes = {
-  name: PropTypes.string,
-};
-
-HeroCard.defaultProps = {
-  name: 'SuperWomen',
+  name: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default HeroCard;

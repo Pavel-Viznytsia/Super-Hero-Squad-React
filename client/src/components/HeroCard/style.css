@@ -11,4 +11,5 @@
 
 .heroName {
   flex-basis: 50%;
+  text-align: left;
 }

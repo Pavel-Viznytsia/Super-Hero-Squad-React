@@ -7,18 +7,20 @@ const SavedSquads = () => (
   <Panel panelTitle="Saved Squads">
     <HeroesSquadCard>
       <table className="savedSquadCard">
-        <tr>
-          <th>Heroes:</th>
-          <th>Stats:</th>
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-        </tr>
-        <tr>
-          <td>Jane</td>
-          <td>Doe</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Heroes:</th>
+            <th>Stats:</th>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+          </tr>
+          <tr>
+            <td>Jane</td>
+            <td>Doe</td>
+          </tr>
+        </tbody>
       </table>
     </HeroesSquadCard>
   </Panel>
