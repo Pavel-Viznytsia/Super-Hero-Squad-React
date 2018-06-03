@@ -1,27 +1,23 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import Panel from './components/shared/Panel';
-import Heroes from './components/Heroes';
+import Container from './components/shared/Container';
+// import Panel from './components/shared/Panel';
 import CreateHeroForm from './components/CreateHero';
+import Heroes from './components/Heroes';
+import SquadEditor from './components/SquadEditor';
+import SaveSquads from './components/SaveSquads';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <main className="main">
-          <h1 className="main__title">Super Squad</h1>
-          <article className="main__container">
-            <Panel panelTitle="Create Hero">
-              <CreateHeroForm />
-            </Panel>
-            <Panel panelTitle="Heroes">
-              <Heroes name="wtf" />
-            </Panel>
-            <Panel panelTitle="Squad Editor" />
-            <Panel panelTitle="Saved Squads" />
-          </article>
-        </main>
+        <Container>
+          <CreateHeroForm />
+          <Heroes />
+          <SquadEditor />
+          <SaveSquads />
+        </Container>
       </div>
     );
   }

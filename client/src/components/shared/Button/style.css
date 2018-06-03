@@ -1,0 +1,32 @@
+.addBtn {
+  border: none;
+  background: #44f03e;
+}
+
+.delBtn {
+  border: none;
+  background: #e92222;
+}
+
+.infBtn {
+  border: none;
+  background: #e0ee17;
+}
+
+.addBtn,
+.delBtn,
+.infBtn {
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 0 4px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.addBtn:hover,
+.delBtn:hover,
+.infBtn:hover {
+  opacity: 0.5;
+}

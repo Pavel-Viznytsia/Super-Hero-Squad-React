@@ -5,7 +5,7 @@ import './style.css';
 const Panel = ({ panelTitle, children }) => (
   <div className="panel">
     <h4 className="panel__title">{panelTitle}</h4>
-    {children}
+    <div>{children}</div>
   </div>
 );
 

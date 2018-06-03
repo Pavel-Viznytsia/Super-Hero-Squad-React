@@ -1,0 +1,5 @@
+.btnBlock {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 50%;
+}

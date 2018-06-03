@@ -1,9 +1,15 @@
 import React from 'react';
+import Input from '../shared/Input';
+import Panel from '../shared/Panel';
 
 const CreateHeroForm = () => (
-  <div className="createHeroForm">
-    <form>form</form>
-  </div>
+  <Panel panelTitle="Create Hero">
+    <div className="createHeroForm">
+      <form>
+        <Input className="addHero" placeholder="Hero name" />
+      </form>
+    </div>
+  </Panel>
 );
 
 export default CreateHeroForm;
