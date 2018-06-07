@@ -1,9 +1,10 @@
 import React from 'react';
-import HeroCard from '../HeroCard';
+import Panel from '../shared/Panel';
 import Input from '../shared/Input';
-import Panel from '../shared/Panel/index';
+import HeroCard from '../HeroCard';
 import ButtonBlock from '../shared/ButtonBlock';
 import Button from '../shared/Button';
+import './style.css';
 
 const heroesList = {
   heroes: [
@@ -102,17 +103,17 @@ const heroesList = {
 const Heroes = () => (
   <Panel panelTitle="Heroes">
     <Input className="addHero" placeholder="Search by name" />
-    <ul>
-      {heroesList.heroes.map(item => (
-        <HeroCard name={item.name} key={String(item.id)}>
+    {heroesList.heroes.map(item => (
+      <section key={String(item.id)}>
+        <HeroCard name={item.name}>
           <ButtonBlock>
             <Button text="Add" className="addBtn" />
             <Button text="Del" className="delBtn" />
             <Button text="Info" className="infBtn" />
           </ButtonBlock>
         </HeroCard>
-      ))}
-    </ul>
+      </section>
+    ))}
   </Panel>
 );
 

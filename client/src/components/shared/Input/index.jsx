@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-class Input extends Component {
+export default class Input extends Component {
+  static propTypes = {
+    placeholder: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    placeholder: 'Enter somthing',
+    className: 'no class name',
+  };
+
   state = {
     value: '',
   };
   render() {
-    Input.propTypes = {
-      placeholder: PropTypes.string.isRequired,
-      className: PropTypes.string.isRequired,
-    };
+    console.log(this.props);
 
     const { placeholder, className } = this.props;
 
     return (
       <div>
-        <input className={className} type="text" placeholder={placeholder} />
+        <input
+          onChange={() => {}}
+          className={className}
+          type="text"
+          placeholder={placeholder}
+        />
       </div>
     );
   }
 }
-
-export default Input;

@@ -11,7 +11,7 @@ const Select = ({ statName }) => (
         {statName}
       </option>
       {statVals.map((statVal, idx) => (
-        <option value={statVal} key={String(idx)}>
+        <option value={statVal} key={String(idx)} className="optVal">
           {statVal}
         </option>
       ))}

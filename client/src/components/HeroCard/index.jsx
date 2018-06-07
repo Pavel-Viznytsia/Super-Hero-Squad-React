@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 const HeroCard = ({ name, children }) => (
-  <li className="heroCard">
+  <section className="heroCard">
     <p className="heroName">{name}</p>
     {children}
-  </li>
+  </section>
 );
 
 HeroCard.propTypes = {

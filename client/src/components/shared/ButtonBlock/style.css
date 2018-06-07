@@ -1,5 +1,5 @@
 .btnBlock {
   display: flex;
-  justify-content: space-around;
-  flex-basis: 50%;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
 }

@@ -9,15 +9,13 @@ const statsDesc = ['Strangth', 'Intelligence', 'Speed'];
 
 const CreateHero = () => (
   <Panel panelTitle="Create Hero">
-    <div className="createHero">
-      <form>
-        <Input className="addHero" placeholder="Hero name" />
-        {statsDesc.map((statDesc, idx) => (
-          <Select statName={statDesc} key={String(idx)} />
-        ))}
-      </form>
+    <form className="createHero">
+      <Input className="addHero" placeholder="Hero name" />
+      {statsDesc.map((statDesc, idx) => (
+        <Select statName={statDesc} key={String(idx)} />
+      ))}
       <Button text="Add Hero" className="addBtn" />
-    </div>
+    </form>
   </Panel>
 );
 

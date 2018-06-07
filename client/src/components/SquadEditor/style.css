@@ -2,3 +2,8 @@
   margin-top: 16px;
   list-style-type: none;
 }
+
+.saBtnBlock {
+  display: flex;
+  justify-content: center;
+}
