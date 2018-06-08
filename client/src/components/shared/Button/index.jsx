@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 const Button = ({ text, className }) => (
-  <button className={className}>{text}</button>
+  <button className={className} onClick={() => {}}>
+    {text}
+  </button>
 );
 
 Button.propTypes = {

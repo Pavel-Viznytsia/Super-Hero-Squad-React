@@ -14,19 +14,24 @@ export default class Input extends Component {
   };
 
   state = {
-    value: '',
+    inputVal: '',
   };
+
+  handleInputChange = e => {
+    const value = e.target.value;
+    this.setState({ inputVal: value });
+  };
+
   render() {
-    console.log(this.props);
-
     const { placeholder, className } = this.props;
-
+    const { inputVal } = this.state;
     return (
       <div>
         <input
-          onChange={() => {}}
-          className={className}
           type="text"
+          value={inputVal}
+          onChange={this.handleInputChange}
+          className={className}
           placeholder={placeholder}
         />
       </div>
