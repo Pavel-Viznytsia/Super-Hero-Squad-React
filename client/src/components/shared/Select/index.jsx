@@ -7,10 +7,11 @@ export default class Select extends Component {
     statName: PropTypes.string.isRequired,
   };
 
-  static defaulProps = {};
+  static defaulProps = {
+  };
 
   state = {
-    statVal: '0',
+    statVal: 0,
   };
 
   handleInputChange = e => {

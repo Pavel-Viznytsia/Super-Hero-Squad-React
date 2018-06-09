@@ -14,4 +14,8 @@ HeroCard.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
+HeroCard.defaultProps = {
+  name: 'Vasya Pupkin',
+};
+
 export default HeroCard;

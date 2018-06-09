@@ -1,12 +1,4 @@
-import React from 'react';
-import Panel from '../shared/Panel';
-import Input from '../shared/Input';
-import HeroCard from '../HeroCard';
-import ButtonBlock from '../shared/ButtonBlock';
-import Button from '../shared/Button';
-import './style.css';
-
-const heroesList = {
+const heroesMockup = {
   heroes: [
     {
       id: 0,
@@ -100,21 +92,4 @@ const heroesList = {
   ],
 };
 
-const Heroes = () => (
-  <Panel panelTitle="Heroes">
-    <Input className="addHero" placeholder="Search by name" />
-    {heroesList.heroes.map(item => (
-      <section key={String(item.id)}>
-        <HeroCard name={item.name}>
-          <ButtonBlock>
-            <Button text="Add" className="addBtn" />
-            <Button text="Del" className="delBtn" />
-            <Button text="Info" className="infBtn" />
-          </ButtonBlock>
-        </HeroCard>
-      </section>
-    ))}
-  </Panel>
-);
-
-export default Heroes;
+export default heroesMockup;

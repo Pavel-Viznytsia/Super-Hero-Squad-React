@@ -1,13 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Panel from '../shared/Panel';
-import HeroCard from '../HeroCard';
 import ButtonBlock from '../shared/ButtonBlock';
 import Button from '../shared/Button';
 import './style.css';
 
 const statsDesc = ['Strangth', 'Intelligence', 'Speed'];
 
-const SquadEditor = () => (
+const SquadEditor = ({ children }) => (
   <Panel panelTitle="Squad Editor">
     <ButtonBlock className={'saBtnBlock'}>
       <Button text="Save Squad" className="addBtn" />
@@ -18,25 +18,12 @@ const SquadEditor = () => (
         <li key={String(idx)}>{statDesc}: 0</li>
       ))}
     </ul>
-    <HeroCard name="SpiderMan">
-      <ButtonBlock>
-        <Button text="Del" className="delBtn" />
-        <Button text="Info" className="infBtn" />
-      </ButtonBlock>
-    </HeroCard>
-    <HeroCard name="SuperMan">
-      <ButtonBlock>
-        <Button text="Del" className="delBtn" />
-        <Button text="Info" className="infBtn" />
-      </ButtonBlock>
-    </HeroCard>
-    <HeroCard name="AquaMan">
-      <ButtonBlock>
-        <Button text="Del" className="delBtn" />
-        <Button text="Info" className="infBtn" />
-      </ButtonBlock>
-    </HeroCard>
+    {children}
   </Panel>
 );
+
+SquadEditor.propTypes = {
+  children: PropTypes.string.isRequired,
+};
 
 export default SquadEditor;
