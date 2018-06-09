@@ -22,12 +22,19 @@ export default class App extends Component {
     filter: '',
   };
 
-  heroFilter = (allHeroes, filter) => {
-    console.log('allHeroes: ', allHeroes);
-    console.log('filter: ', filter);
-    this.setState({
-      heroesList: allHeroes.heroes.filter(item => item.name === filter),
-    });
+  heroFilter = filter => {
+    console.log('this.state.heroesList: ', this.state.heroesList);
+    // this.state.heroesList.map((hero, idx) => console.log(hero[idx]));
+    // this.state.heroesList.map((hero, idx) => console.log(filter));
+    // console.log('filter: ', filter);
+
+    // this.setState(prevState => ({
+    //   heroesList: prevState.filter((hero, idx) => hero.name === filter),
+    // }));
+
+    this.setState(prevState => ({
+      heroesList: prevState.filter((hero, idx) => hero.name === filter),
+    }));
   };
 
   render() {

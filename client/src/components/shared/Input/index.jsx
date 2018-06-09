@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import heroesList from '../../mockup';
+// import heroesList from '../../mockup';
 import './style.css';
 
 export default class Input extends Component {
   static propTypes = {
     placeholder: PropTypes.string.isRequired,
     className: PropTypes.string.isRequired,
-    filter: PropTypes.func.isRequired,
+    onFilterChange: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -19,18 +19,18 @@ export default class Input extends Component {
     inputVal: '',
   };
 
-  onFilter = () => {
-    this.props.filter(heroesList, this.state.inputVal);
-  };
-
   handleInputChange = e => {
     const value = e.target.value;
+
     this.setState({ inputVal: value });
+
+    this.props.onFilterChange(this.state.inputVal);
   };
 
   render() {
     const { placeholder, className } = this.props;
     const { inputVal } = this.state;
+    console.log('inputVal in INPUT:', inputVal);
     return (
       <div>
         <input
