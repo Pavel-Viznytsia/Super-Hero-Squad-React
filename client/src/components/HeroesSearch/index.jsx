@@ -7,12 +7,13 @@ import ButtonBlock from '../shared/ButtonBlock';
 import Button from '../shared/Button';
 import './style.css';
 
-const HeroesSearch = ({ heroesList, filter }) => (
+const HeroesSearch = ({ heroesList, onFilterChange, filter }) => (
   <Panel panelTitle="Search Heroes">
     <Input
       className="addHero"
       placeholder="Search by name"
-      onFilterChange={filter}
+      onFilterChange={onFilterChange}
+      filter={filter}
     />
     {heroesList.map(hero => (
       <section key={String(hero.id)}>
@@ -29,8 +30,9 @@ const HeroesSearch = ({ heroesList, filter }) => (
 );
 
 HeroesSearch.propTypes = {
-  heroesList: PropTypes.shape().isRequired,
-  filter: PropTypes.func.isRequired,
+  heroesList: PropTypes.arrayOf.isRequired,
+  onFilterChange: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 HeroesSearch.defaultProps = {};

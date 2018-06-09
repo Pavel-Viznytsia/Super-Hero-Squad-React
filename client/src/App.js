@@ -1,5 +1,4 @@
 /* eslint-disable*/
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Container from './components/shared/Container';
@@ -13,6 +12,11 @@ import ButtonBlock from './components/shared/ButtonBlock';
 import heroesList from './components/mockup';
 import './App.css';
 
+const getAvailableHero = (heroesList, filter) => {
+  console.log(heroesList);
+  heroesList.filter(hero => console.log(hero.name.includes(filter)));
+};
+
 export default class App extends Component {
   static propTypes = {};
   static defaultProps = {};
@@ -22,28 +26,25 @@ export default class App extends Component {
     filter: '',
   };
 
-  heroFilter = filter => {
-    console.log('this.state.heroesList: ', this.state.heroesList);
-    // this.state.heroesList.map((hero, idx) => console.log(hero[idx]));
-    // this.state.heroesList.map((hero, idx) => console.log(filter));
-    // console.log('filter: ', filter);
-
-    // this.setState(prevState => ({
-    //   heroesList: prevState.filter((hero, idx) => hero.name === filter),
-    // }));
-
-    this.setState(prevState => ({
-      heroesList: prevState.filter((hero, idx) => hero.name === filter),
-    }));
+  handleFilterChange = filter => {
+    this.setState({ filter: filter });
   };
 
   render() {
-    const { heroesList } = this.state;
+    const { heroesList, filter } = this.state;
+
+    const getHero = getAvailableHero(heroesList, filter);
+
+    console.log('getHero', this.getHero);
+
     return (
       <div className="App">
         <Container>
           <CreateHero />
-          <HeroesSearch heroesList={heroesList} filter={this.heroFilter}>
+          <HeroesSearch
+            heroesList={heroesList}
+            onFilterChange={this.handleFilterChange}
+            filter={filter}>
             {heroesList.length > 0 && <HeroCard />}
           </HeroesSearch>
           <SquadEditor>
