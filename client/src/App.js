@@ -1,6 +1,4 @@
-/* eslint-disable*/
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Container from './components/shared/Container';
 import CreateHero from './components/CreateHero';
 import HeroesSearch from './components/HeroesSearch';
@@ -9,43 +7,41 @@ import SavedSquads from './components/SavedSquads';
 import HeroCard from './components/HeroCard';
 import Button from './components/shared/Button';
 import ButtonBlock from './components/shared/ButtonBlock';
-import heroesList from './components/mockup';
+import Input from './components/shared/Input';
+import heroesLists from './components/mockup';
 import './App.css';
 
-const getAvailableHero = (heroesList, filter) => {
-  console.log(heroesList);
-  heroesList.filter(hero => console.log(hero.name.includes(filter)));
-};
+const getAvailableHero = (heroesList, filter) =>
+  heroesList.filter(hero => hero.name.includes(filter));
 
 export default class App extends Component {
-  static propTypes = {};
-  static defaultProps = {};
-
   state = {
-    heroesList: heroesList.heroes,
+    heroesList: heroesLists.heroes,
     filter: '',
   };
 
-  handleFilterChange = filter => {
-    this.setState({ filter: filter });
+  handleFilterChange = str => {
+    this.setState({ filter: str });
   };
 
   render() {
     const { heroesList, filter } = this.state;
 
-    const getHero = getAvailableHero(heroesList, filter);
+    const viewHero = getAvailableHero(heroesList, filter);
 
-    console.log('getHero', this.getHero);
+    // console.log('viewHero: ', viewHero);
 
     return (
       <div className="App">
         <Container>
           <CreateHero />
-          <HeroesSearch
-            heroesList={heroesList}
-            onFilterChange={this.handleFilterChange}
-            filter={filter}>
-            {heroesList.length > 0 && <HeroCard />}
+          <HeroesSearch heroesList={viewHero}>
+            <Input
+              className="addHero"
+              placeholder="Search by name"
+              onFilterChange={this.handleFilterChange}
+              filter={filter}
+            />
           </HeroesSearch>
           <SquadEditor>
             {heroesList.length > 0 ? (

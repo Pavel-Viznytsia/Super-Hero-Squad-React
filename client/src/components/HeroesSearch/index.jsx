@@ -1,20 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Panel from '../shared/Panel';
-import Input from '../shared/Input';
 import HeroCard from '../HeroCard';
 import ButtonBlock from '../shared/ButtonBlock';
 import Button from '../shared/Button';
 import './style.css';
 
-const HeroesSearch = ({ heroesList, onFilterChange, filter }) => (
+const HeroesSearch = ({ heroesList, children }) => (
   <Panel panelTitle="Search Heroes">
-    <Input
-      className="addHero"
-      placeholder="Search by name"
-      onFilterChange={onFilterChange}
-      filter={filter}
-    />
+    {children}
     {heroesList.map(hero => (
       <section key={String(hero.id)}>
         <HeroCard name={hero.name}>
@@ -31,8 +25,7 @@ const HeroesSearch = ({ heroesList, onFilterChange, filter }) => (
 
 HeroesSearch.propTypes = {
   heroesList: PropTypes.arrayOf.isRequired,
-  onFilterChange: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 HeroesSearch.defaultProps = {};

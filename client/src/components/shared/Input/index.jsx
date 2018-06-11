@@ -11,16 +11,13 @@ export default class Input extends Component {
   };
 
   static defaultProps = {
-    placeholder: 'Enter somthing',
-    className: 'no class name',
+    placeholder: '',
+    className: '',
+    onFilterChange: () => {},
+    filter: '',
   };
 
-  state = {
-    inputVal: '',
-  };
-
-  handleInputChange = e => {
-    this.setState({ inputVal: e.target.value });
+  onFilterChange = e => {
     this.props.onFilterChange(e.target.value);
   };
 
@@ -33,7 +30,7 @@ export default class Input extends Component {
           type="text"
           value={filter}
           placeholder={placeholder}
-          onChange={this.handleInputChange}
+          onChange={this.onFilterChange}
         />
       </div>
     );
