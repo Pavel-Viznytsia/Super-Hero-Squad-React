@@ -18,6 +18,7 @@ const HeroesSearch = ({ heroesList, children, onDeleteHero }) => (
               text="Del"
               className="delBtn"
               hero={hero}
+              // onClick={() => onDeleteHero(hero.id)} - Я хочу тут запустить удалений !!!
               onDelete={onDeleteHero}
             />
             <Button text="Info" className="infBtn" />

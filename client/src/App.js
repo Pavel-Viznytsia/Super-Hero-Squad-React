@@ -21,7 +21,6 @@ export default class App extends Component {
   };
 
   onDeleteHero = id => {
-    // console.log(id);
     this.setState(prevState => ({
       heroesList: prevState.heroesList.filter(hero => hero.id !== id),
     }));
