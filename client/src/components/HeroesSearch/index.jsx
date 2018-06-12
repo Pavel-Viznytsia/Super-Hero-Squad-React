@@ -6,7 +6,7 @@ import ButtonBlock from '../shared/ButtonBlock';
 import Button from '../shared/Button';
 import './style.css';
 
-const HeroesSearch = ({ heroesList, children }) => (
+const HeroesSearch = ({ heroesList, children, onDeleteHero }) => (
   <Panel panelTitle="Search Heroes">
     {children}
     {heroesList.map(hero => (
@@ -14,7 +14,12 @@ const HeroesSearch = ({ heroesList, children }) => (
         <HeroCard name={hero.name}>
           <ButtonBlock>
             <Button text="Add" className="addBtn" />
-            <Button text="Del" className="delBtn" />
+            <Button
+              text="Del"
+              className="delBtn"
+              hero={hero}
+              onDelete={onDeleteHero}
+            />
             <Button text="Info" className="infBtn" />
           </ButtonBlock>
         </HeroCard>
@@ -26,6 +31,7 @@ const HeroesSearch = ({ heroesList, children }) => (
 HeroesSearch.propTypes = {
   heroesList: PropTypes.arrayOf.isRequired,
   children: PropTypes.string.isRequired,
+  onDeleteHero: PropTypes.func.isRequired,
 };
 
 HeroesSearch.defaultProps = {};

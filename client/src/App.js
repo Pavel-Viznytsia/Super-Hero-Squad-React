@@ -20,6 +20,13 @@ export default class App extends Component {
     filter: '',
   };
 
+  onDeleteHero = id => {
+    // console.log(id);
+    this.setState(prevState => ({
+      heroesList: prevState.heroesList.filter(hero => hero.id !== id),
+    }));
+  };
+
   handleFilterChange = str => {
     this.setState({ filter: str });
   };
@@ -29,13 +36,11 @@ export default class App extends Component {
 
     const viewHero = getAvailableHero(heroesList, filter);
 
-    // console.log('viewHero: ', viewHero);
-
     return (
       <div className="App">
         <Container>
           <CreateHero />
-          <HeroesSearch heroesList={viewHero}>
+          <HeroesSearch heroesList={viewHero} onDeleteHero={this.onDeleteHero}>
             <Input
               className="addHero"
               placeholder="Search by name"
