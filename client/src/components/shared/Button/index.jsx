@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-const Button = ({ text, className, hero, onDelete }) => (
-  <button className={className} onClick={() => onDelete(hero.id)}>
+const Button = ({ text, className, onBtnClick }) => (
+  <button className={className} onClick={onBtnClick}>
     {text}
   </button>
 );
@@ -11,8 +11,7 @@ const Button = ({ text, className, hero, onDelete }) => (
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-  hero: PropTypes.shape.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onBtnClick: PropTypes.func.isRequired,
 };
 
 export default Button;

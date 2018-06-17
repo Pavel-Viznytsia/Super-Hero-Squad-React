@@ -7,7 +7,7 @@ import SavedSquads from './components/SavedSquads';
 import HeroCard from './components/HeroCard';
 import Button from './components/shared/Button';
 import ButtonBlock from './components/shared/ButtonBlock';
-import Input from './components/shared/Input';
+// import Input from './components/shared/Input';
 import heroesLists from './components/mockup';
 import './App.css';
 
@@ -30,6 +30,10 @@ export default class App extends Component {
     this.setState({ filter: str });
   };
 
+  takeHeroInfo = hero => {
+    console.log(hero);
+  };
+
   render() {
     const { heroesList, filter } = this.state;
 
@@ -39,25 +43,20 @@ export default class App extends Component {
       <div className="App">
         <Container>
           <CreateHero />
-          <HeroesSearch heroesList={viewHero} onDeleteHero={this.onDeleteHero}>
-            <Input
-              className="addHero"
-              placeholder="Search by name"
-              onFilterChange={this.handleFilterChange}
-              filter={filter}
-            />
-          </HeroesSearch>
+          <HeroesSearch
+            heroesList={viewHero}
+            filter={filter}
+            onDeleteHero={this.onDeleteHero}
+            onFilterChange={this.handleFilterChange}
+            takeHeroInfo={this.takeHeroInfo}
+          />
           <SquadEditor>
-            {heroesList.length > 0 ? (
-              <HeroCard name="SpiderMan">
-                <ButtonBlock>
-                  <Button text="Del" className="delBtn" />
-                  <Button text="Info" className="infBtn" />
-                </ButtonBlock>
-              </HeroCard>
-            ) : (
-              <h1>no hero yet</h1>
-            )}
+            <HeroCard name="SpiderMan">
+              <ButtonBlock>
+                <Button text="Del" className="delBtn" />
+                <Button text="Info" className="infBtn" />
+              </ButtonBlock>
+            </HeroCard>
           </SquadEditor>
           <SavedSquads />
         </Container>

@@ -13,7 +13,6 @@ export default class Input extends Component {
   static defaultProps = {
     placeholder: '',
     className: '',
-    onFilterChange: () => {},
     filter: '',
   };
 
